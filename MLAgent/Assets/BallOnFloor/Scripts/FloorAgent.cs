@@ -55,6 +55,9 @@ public class FloorAgent : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
+        var ContinuousActions = actionsOut.ContinuousActions;
+        ContinuousActions[0] = -Input.GetAxis("Horizontal");
+        ContinuousActions[1] = -Input.GetAxis("Vertical");
     }
 
     private bool DropBall()
