@@ -27,7 +27,7 @@ public class Fish : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(targetPosition - transform.position, Vector3.up);
 
             float timeToGetThere=Vector3.Distance(transform.position, targetPosition) / randomizedSpeed;
-            nextActionTime = Time.deltaTime + timeToGetThere;
+            nextActionTime = Time.fixedDeltaTime + timeToGetThere;
         }
         else
         {

@@ -1169,14 +1169,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8789386076248951199}
     m_Modifications:
-    - target: {fileID: 4073055998449787624, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: heartPrefab
-      value: 
-      objectReference: {fileID: 4548131746485014503, guid: 9f71b139da30a3a40a9b5668b8032eb4, type: 3}
-    - target: {fileID: 4073055998449787624, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: regurgitatedFishPrefab
-      value: 
-      objectReference: {fileID: 8001082172012030522, guid: ef0f4d801b16179458dd9174a3490031, type: 3}
     - target: {fileID: 5168602205143236952, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
       propertyPath: m_Name
       value: penguin
@@ -1226,36 +1218,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6616734445448290119, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: m_BehaviorName
-      value: Penguin
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616734445448290119, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: m_BrainParameters.VectorObservationSize
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616734445448290119, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: m_BrainParameters.VectorActionSize.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616734445448290119, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616734445448290119, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: m_BrainParameters.VectorActionSize.Array.data[1]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616734445448290119, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616734445448290119, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616734445448290119, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
-      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]
-      value: 3
+      propertyPath: m_BehaviorType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
@@ -1264,12 +1228,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4073055998449787624, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
   m_PrefabInstance: {fileID: 2072350255}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5168602205520433015}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a888a9eb260810d4eb0dea7e3c3f9037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5168602205520433015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5168602205143236952, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}
+  m_PrefabInstance: {fileID: 2072350255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &46460828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168602205520433015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Fish
+  - Baby
+  - Untagged
+  m_RaysPerDirection: 2
+  m_MaxRayDegrees: 60
+  m_SphereCastRadius: 0.05
+  m_RayLength: 20
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!4 &5544284079558022605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5544284078828510178, guid: 5ffb1b41732bc3841998d648404d1770, type: 3}

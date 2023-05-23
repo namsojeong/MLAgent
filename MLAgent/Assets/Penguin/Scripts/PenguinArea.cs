@@ -30,6 +30,19 @@ public class PenguinArea : MonoBehaviour
         return center + Quaternion.Euler(0f, angle, 0f) * Vector3.forward * radius;
     }
 
+    public int FishRemaining
+    {
+        get
+        {
+            return fishList.Count;
+        }
+    }
+
+    private void Update()
+    {
+        cumulativeRewardText.text = penguinAgent.GetCumulativeReward().ToString("0.00");
+    }
+
     public void ResetArea()
     {
         RemoveAllFish();
@@ -69,6 +82,12 @@ public class PenguinArea : MonoBehaviour
             fishList.Add(fishObject);
             fishObject.GetComponent<Fish>().fishSpeed= fishSpeed;
         }
+    }
+
+    public void RemoveSpecialFish(GameObject fishObject)
+    {
+        fishList.Remove(fishObject);
+        Destroy(fishObject);
     }
 
     private void RemoveAllFish()
